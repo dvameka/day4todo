@@ -1,0 +1,39 @@
+<form #MyForm="ngForm" (ngSubmit) = "processToDoForm(MyForm)">
+<div fxLayout="column" fxLayoutGap="1vw" fxLayoutAlign="start center">
+  <mat-toolbar color="accent">
+    <mat-toolbar-row >
+      <div fxLayout="row"  fxLayoutAlign="start center">ToDo
+      <img src="./assets/todo-blue.png" width="50">
+    </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+<br>
+    <mat-form-field>
+      <input type="text" name="description" placeholder="Please enter Task Details" matInput ngModel required description> 
+    </mat-form-field>
+<br>
+        <mat-radio-group name="Priority" matInput ngModel> Priority:
+          <div fxLayout="row" fxLayoutGap="2vw">
+            <mat-radio-button value="high">high</mat-radio-button> 
+            <mat-radio-button value="medium">medium</mat-radio-button> 
+            <mat-radio-button value="low">low</mat-radio-button> 
+          </div>
+        </mat-radio-group>
+
+    <mat-form-field>
+
+        <input matInput [matDatepicker]="datepicker" placeholder="Due By:" ngModel name="due">
+        
+        <mat-datepicker-toggle matSuffix [for]="datepicker">
+        </mat-datepicker-toggle>
+
+        <mat-datepicker #datepicker>
+        </mat-datepicker>
+
+    </mat-form-field>
+
+  <button type="submit" color="accent" mat-raised-button [disabled]="MyForm.invalid">Add</button>
+  </div>
+  <br>
+  <mat-divider></mat-divider>
+</form>  
