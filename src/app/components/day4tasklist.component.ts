@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-day4tasklist',
@@ -7,19 +6,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./day4tasklist.component.css']
 })
 export class Day4tasklistComponent implements OnInit {
-  
-    @ViewChild ('TaskForm')
-    f:NgForm
 
   constructor() { }
 
   ngOnInit() {
 
   }
-processTaskForm(myForm: NgForm) {
-  const desc = myForm.value.description;
-  console.log(desc);
 
-}
+
 }
 

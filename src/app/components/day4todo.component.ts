@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -15,5 +15,11 @@ export class Day4todoComponent implements OnInit {
   processToDoForm(form: NgForm) {
     const desc = form.value.description;
     console.log(desc);
+
+    const prior = form.value.priority;
+    console.log(prior);
+
+    const date = form.value.due;
+    console.log(date);
   }
 }
